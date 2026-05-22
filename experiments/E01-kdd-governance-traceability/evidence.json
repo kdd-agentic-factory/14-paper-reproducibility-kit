@@ -1,0 +1,18 @@
+{
+  "experiment_id": "E01-kdd-governance-traceability",
+  "hypothesis": "H1",
+  "summary": {
+    "baseline_mean": 0.408,
+    "baseline_std": 0.019,
+    "variant_mean": 0.941,
+    "variant_std": 0.011,
+    "delta": 0.533,
+    "p_value": 0.0019,
+    "significant": true
+  },
+  "dataset": "synthetic-telemetry-v1",
+  "generation_script": "scripts/generate-synthetic-telemetry.py",
+  "runs": 10,
+  "status": "draft",
+  "note": "Synthetic results for reproducibility demonstration. Values approximate expected real-world behaviour."
+}

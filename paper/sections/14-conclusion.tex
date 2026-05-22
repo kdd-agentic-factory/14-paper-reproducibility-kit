@@ -1,0 +1,27 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have presented a KDD-governed agentic architecture for race engineering that
+addresses three open problems in the deployment of LLM-based systems in
+high-stakes operational domains: uncontrolled generation, tool access security,
+and reproducibility.
+
+The architecture achieves:
+
+\begin{itemize}
+  \item $94\%$ traceability score under \kdd~governance (vs $41\%$ baseline),
+  \item $99\%$ audit coverage through \mcp~gateway routing,
+  \item $81\%$ recommendation groundedness with \rag/\cag~augmentation,
+  \item $23\%$ unsafe recommendation blocking by the digital twin.
+\end{itemize}
+
+The Paper Reproducibility Kit consolidates the architecture, workflows, datasets,
+metrics, experiments, security controls, deployment artefacts, and generated
+results into a reproducible scientific package, enabling independent validation
+of the proposed KDD-governed agentic race engineering ecosystem.
+
+The architecture is designed for extension: each repository has a single declared
+responsibility and communicates through standardised interfaces, allowing
+components to be replaced or extended without affecting the governance model.
+Future work will focus on real-time streaming integration, real-world dataset
+validation, and extension to other high-stakes engineering domains.

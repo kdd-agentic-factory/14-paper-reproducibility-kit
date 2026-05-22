@@ -1,0 +1,26 @@
+\section{Security Controls}
+\label{app:security-controls}
+
+Security controls are defined in
+\texttt{artifacts/security/control-catalog.yaml} and implemented across the
+repository ecosystem. The following table summarises the controls directly
+relevant to the experimental evaluation.
+
+\begin{table}[ht]
+\centering
+\caption{Security controls relevant to the agentic system.}
+\label{tab:security-controls}
+\begin{tabular}{llll}
+\toprule
+Control ID & Description & Repository & Status \\
+\midrule
+SEC-001 & Capability-based tool access via MCP & 02-mcp-gateway & implemented \\
+SEC-002 & Mandatory audit logging per tool call & 02-mcp-gateway & implemented \\
+SEC-003 & Secret injection from vault & 02-mcp-gateway & implemented \\
+SEC-004 & Prompt injection filtering & 02-mcp-gateway & implemented \\
+SEC-005 & Dataset classification enforcement & 14-paper-repro & implemented \\
+SEC-006 & No credentials in repository & all & enforced via CI \\
+SEC-007 & SBOM generation per release & 12-ci-cd & implemented \\
+\bottomrule
+\end{tabular}
+\end{table}

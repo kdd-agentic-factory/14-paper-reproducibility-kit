@@ -1,0 +1,41 @@
+\section{Race AI Copilot}
+\label{sec:copilot}
+
+The Race AI Copilot is the core reasoning component of the system. It receives
+structured evidence packets from the data pipeline, retrieves relevant historical
+knowledge, and produces grounded recommendations.
+
+\subsection{Evidence-Grounded Generation}
+
+Unlike a bare LLM prompted with raw telemetry, the copilot operates on
+pre-processed evidence packets. Each packet contains:
+
+\begin{itemize}
+  \item extracted features (tyre temperature gradient, suspension travel range,
+    spin/slip ratio),
+  \item anomaly flags with confidence scores,
+  \item session context (lap count, fuel load, ambient conditions),
+  \item citations to retrieved historical cases.
+\end{itemize}
+
+The copilot prompt is structured by the \sdd~mechanism, guaranteeing that every
+recommendation includes evidence citations, confidence, uncertainty bounds, and
+the governance metadata required by the \kdd~model.
+
+\subsection{Retrieval Strategy}
+
+The copilot uses a hybrid \rag/\cag~strategy:
+
+\begin{itemize}
+  \item \rag~retrieves semantically similar historical sessions from the vector
+    index,
+  \item \cag~injects circuit-specific setup heuristics from the cached knowledge
+    layer without re-indexing.
+\end{itemize}
+
+\subsection{Output Format}
+
+Each copilot recommendation is a structured JSON document containing the
+recommendation text, confidence score, supporting evidence list, uncertainty
+range, and provenance metadata. This format is consumed directly by the \rcc~
+dashboard and stored in the audit log.

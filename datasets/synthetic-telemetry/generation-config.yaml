@@ -1,0 +1,18 @@
+generator: scripts/generate-synthetic-telemetry.py
+version: 1.0.0
+seed: 42
+sessions:
+  - name: synthetic-session-fp1
+    n_samples: 5000
+    seed_offset: 0
+  - name: synthetic-session-fp2
+    n_samples: 5000
+    seed_offset: 1
+parameters:
+  base_speed_kmh: 180
+  speed_amplitude_kmh: 40
+  base_tire_temp_surface: 85
+  tire_temp_amplitude: 25
+  spin_growth_rate: 0.00002
+  max_lean_angle_deg: 55
+  n_laps: 10

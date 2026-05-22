@@ -1,0 +1,42 @@
+\section{Reproducibility Protocol}
+\label{app:reproducibility-protocol}
+
+\subsection{Prerequisites}
+
+\begin{itemize}
+  \item Docker Engine $\geq 24.0$ or Python 3.11 with pip,
+  \item 16\,GB RAM recommended,
+  \item Internet connection for initial dependency download only.
+\end{itemize}
+
+\subsection{Full Reproduction Steps}
+
+\begin{enumerate}
+  \item Clone this repository.
+  \item Run \texttt{make setup} to install Python dependencies.
+  \item Run \texttt{make generate-data} to produce synthetic datasets.
+  \item Run \texttt{make generate-tables} to produce LaTeX tables.
+  \item Run \texttt{make generate-figures} to produce PDF figures (requires
+    matplotlib).
+  \item Run \texttt{make build-paper} to compile the PDF (requires TeX Live).
+  \item Run \texttt{make validate} to check checksums and metadata.
+  \item Run \texttt{make test} to execute the test suite.
+\end{enumerate}
+
+\subsection{Docker Reproduction}
+
+\begin{verbatim}
+docker compose -f docker-compose.repro.yml up --build
+\end{verbatim}
+
+This runs all steps above in a pre-built environment with Python 3.11 and
+TeX Live installed.
+
+\subsection{Expected Outputs}
+
+\begin{itemize}
+  \item \texttt{build/main.pdf} --- compiled paper,
+  \item \texttt{paper/tables/experiment-summary.tex} --- generated table,
+  \item \texttt{datasets/synthetic-telemetry/synthetic-session-fp1.csv},
+  \item \texttt{reproducibility/checksums.sha256}.
+\end{itemize}

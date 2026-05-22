@@ -1,0 +1,40 @@
+\section{Threats to Validity}
+\label{sec:threats-to-validity}
+
+\subsection{Internal Validity}
+
+\textbf{Synthetic datasets.} All experiments use synthetically generated
+telemetry. Real MotoGP telemetry is subject to commercial confidentiality
+agreements. The synthetic generator (\texttt{scripts/generate-synthetic-telemetry.py})
+reproduces the statistical structure of typical session data but does not capture
+all sources of real-world variance.
+
+\textbf{Single implementation.} Results reflect one instantiation of the proposed
+architecture. Alternative implementation choices (different LLM providers, vector
+databases, orchestration frameworks) may yield different quantitative outcomes.
+
+\subsection{External Validity}
+
+\textbf{Domain specificity.} The architecture targets elite motorcycle racing.
+Transfer to other motorsport disciplines or high-stakes engineering domains would
+require adaptation of the domain-specific components (telemetry schema, twin
+models, knowledge base structure).
+
+\textbf{Scale.} Experiments simulate single-session scenarios. Production deployment
+involves multiple concurrent sessions, larger knowledge bases, and real-time
+constraints not captured in the experimental protocol.
+
+\subsection{Construct Validity}
+
+\textbf{Metric definitions.} Traceability score, groundedness, and audit coverage
+are operationally defined for this study. Alternative definitions may produce
+different baseline/variant gaps.
+
+\textbf{Evaluator reliability.} Evidence quality scores in E06 were assigned by
+the authors. Independent blind evaluation would strengthen construct validity.
+
+\subsection{Conclusion Validity}
+
+\textbf{Small sample size.} Ten runs per condition provides sufficient power for
+large effect sizes but may miss moderate effects. Future work should expand to
+at least thirty independent runs.

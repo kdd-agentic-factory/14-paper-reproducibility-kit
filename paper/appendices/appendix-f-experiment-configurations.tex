@@ -1,0 +1,45 @@
+\section{Experiment Configurations}
+\label{app:experiment-configurations}
+
+Full experiment configurations are stored in
+\texttt{experiments/experiment-index.yaml} and the individual experiment
+directories under \texttt{experiments/}.
+
+\subsection{Common Parameters}
+
+\begin{itemize}
+  \item Runs per condition: 10,
+  \item Random seed base: 42 (incremented per run),
+  \item Statistical test: paired Wilcoxon signed-rank,
+  \item Significance threshold: $\alpha = 0.05$.
+\end{itemize}
+
+\subsection{Dataset Parameters}
+
+Synthetic telemetry datasets are generated with $n = 5{,}000$ samples per
+session, covering ten simulated laps. See
+\texttt{datasets/synthetic-telemetry/dataset-card.md} for full field
+documentation and generation parameters.
+
+\subsection{Experiment Registry}
+
+\begin{table}[ht]
+\centering
+\caption{Experiment registry with hypotheses and primary metrics.}
+\label{tab:experiment-registry}
+\begin{tabular}{llll}
+\toprule
+ID & Title & Hypothesis & Primary Metric \\
+\midrule
+E01 & KDD governance traceability & H1 & Traceability Score \\
+E02 & SDD vs free generation & H2 & SDD Compliance Rate \\
+E03 & MCP vs direct tools & H3 & Audit Coverage \\
+E04 & Skills vs free prompts & H4 & Output Consistency \\
+E05 & RAG/CAG vs no retrieval & H5 & Groundedness \\
+E06 & Copilot evidence quality & H6 & Evidence Density \\
+E07 & Digital twin validation & H7 & Block Rate \\
+E08 & RCC usability & H8 & SUS Score \\
+E09 & End-to-end loop & H1--H8 & Composite \\
+\bottomrule
+\end{tabular}
+\end{table}

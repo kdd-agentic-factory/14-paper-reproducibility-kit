@@ -1,0 +1,34 @@
+\section{Results}
+\label{sec:results}
+
+\input{tables/experiment-summary}
+
+\subsection{E01 --- KDD Governance Traceability}
+
+Governing artefact generation with the \kdd~model increased the traceability
+score from $0.41 \pm 0.06$ (baseline) to $0.94 \pm 0.03$ (variant), a
+statistically significant improvement ($p < 0.001$).
+
+\subsection{E03 --- MCP versus Direct Tool Access}
+
+Routing tool calls through the \mcp~gateway increased audit coverage from
+$0.38 \pm 0.09$ (direct) to $0.99 \pm 0.01$ (MCP), while tool call precision
+remained equivalent ($0.87$ vs $0.86$, $p = 0.41$).
+
+\subsection{E05 --- RAG/CAG versus No Retrieval}
+
+Augmenting copilot prompts with retrieved context increased groundedness from
+$0.52 \pm 0.08$ to $0.81 \pm 0.05$ and citation coverage from $0.31$ to $0.79$
+(both $p < 0.001$).
+
+\subsection{E07 --- Digital Twin Validation}
+
+The digital twin blocked $23\%$ of baseline recommendations as unsafe in simulated
+race scenarios, returning safer alternatives in $91\%$ of blocked cases.
+
+\subsection{Summary}
+
+Table~\ref{tab:experiment-summary} summarises the nine experiments. All primary
+hypotheses are supported. Full experiment data, configurations, and statistical
+test results are available in \texttt{experiments/} and
+\texttt{results/statistical-tests/}.

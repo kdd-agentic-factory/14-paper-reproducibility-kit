@@ -1,0 +1,34 @@
+\section{Repository Organisation}
+\label{app:repository-organization}
+
+The full ecosystem comprises fifteen repositories under the
+\texttt{kdd-agentic-factory} organisation. Each repository has a single declared
+responsibility, a dedicated \texttt{AGENTS.md} governance file, and a defined
+interface with adjacent repositories.
+
+\begin{table}[ht]
+\centering
+\caption{Repository catalog and primary responsibilities.}
+\label{tab:repository-catalog}
+\begin{tabular}{lp{8cm}}
+\toprule
+Repository & Responsibility \\
+\midrule
+00-kdd-governance & Methodology, standards, governance artefacts \\
+01-agent-orchestrator & Agentic engine, task routing, session management \\
+02-mcp-gateway & Secure tool access via Model Context Protocol \\
+03-rag-cag-knowledge-layer & Domain knowledge retrieval and context augmentation \\
+04-skills-autoskills-registry & Reusable agent capabilities \\
+05-documentation-agent & Traceable structured documentation \\
+06-kdd-data-pipelines & Telemetry transformation and feature extraction \\
+07-agentic-workflows & Declarative multi-step workflow execution \\
+08-experimentation-lab & Controlled experiment design and archival \\
+09-observability-platform & Metrics, tracing, and alerting \\
+10-infra-docker & Reproducible local development environments \\
+11-infra-kubernetes & Cloud-native deployment manifests \\
+12-ci-cd-release-engineering & Build, test, and release automation \\
+13-security-governance-compliance & Security controls and compliance policies \\
+14-paper-reproducibility-kit & Scientific paper and reproducibility package \\
+\bottomrule
+\end{tabular}
+\end{table}

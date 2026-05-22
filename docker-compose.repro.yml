@@ -1,0 +1,9 @@
+services:
+  paper-reproducibility-kit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: paper-reproducibility-kit
+    volumes:
+      - .:/workspace
+    command: make reproduce-all

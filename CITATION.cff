@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility kit, please cite it as below."
+type: software
+title: "KDD-Governed Agentic Race Engineering — Paper Reproducibility Kit"
+version: 0.1.0
+date-released: 2026-05-22
+authors:
+  - family-names: Juarez Cadiz
+    given-names: Ruben
+    affiliation: Universidad Alfonso X el Sabio
+abstract: >
+  Reproducibility kit for the paper "A KDD-Governed Agentic Architecture for
+  Race Engineering: From Telemetry to Evidence-Grounded Decision Support".
+  Contains the LaTeX manuscript, synthetic datasets, experimental results,
+  analysis notebooks, generation scripts, and reviewer package.
+license: MIT
+keywords:
+  - agentic AI
+  - race engineering
+  - KDD
+  - reproducibility
+  - MotoGP
+  - knowledge-driven development

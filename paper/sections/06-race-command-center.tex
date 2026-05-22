@@ -1,0 +1,39 @@
+\section{Race Command Center}
+\label{sec:race-command-center}
+
+The Race Command Center (\rcc) is the human-in-the-loop interface through which
+race engineers interact with the agentic system during live sessions.
+
+\subsection{Dashboard Components}
+
+The \rcc~dashboard presents:
+
+\begin{itemize}
+  \item \textbf{Live telemetry panel}: real-time channel visualisation with
+    anomaly highlighting,
+  \item \textbf{Evidence panel}: active evidence packets supporting the current
+    recommendation,
+  \item \textbf{Recommendation panel}: ranked, confidence-scored recommendations
+    from the copilot,
+  \item \textbf{Audit trail}: chronological log of agent actions and tool calls,
+  \item \textbf{Setup delta view}: comparison of current setup against the
+    digital twin optimum.
+\end{itemize}
+
+\subsection{Human Override Protocol}
+
+Engineers may accept, modify, or reject any recommendation. All overrides are
+recorded in the audit trail and fed back to the knowledge layer as evidence for
+future sessions.
+
+\subsection{Usability Design Principles}
+
+The \rcc~is designed for high-stress, time-critical operation:
+
+\begin{itemize}
+  \item Single recommended action per panel, with evidence expandable on demand,
+  \item Colour-coded confidence bands (green $>$ 0.80, amber 0.60--0.80,
+    red $<$ 0.60),
+  \item Maximum three-click depth for any action,
+  \item No network dependency for core display functions.
+\end{itemize}

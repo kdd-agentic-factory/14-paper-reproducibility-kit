@@ -1,0 +1,112 @@
+paper:
+  title: "A KDD-Governed Agentic Architecture for Race Engineering: From Telemetry to Evidence-Grounded Decision Support"
+  version: 0.1.0
+  status: draft
+  main_file: paper/main.tex
+  author: "Ruben Juarez Cadiz"
+
+environment:
+  python: "3.11"
+  latex: "texlive-full"
+  docker_required: true
+  recommended_memory_gb: 16
+  recommended_cpu_cores: 8
+  os: linux
+
+datasets:
+  - id: synthetic-telemetry-v1
+    path: datasets/synthetic-telemetry/synthetic-session-fp1.csv
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    checksum: pending
+
+  - id: synthetic-telemetry-fp2-v1
+    path: datasets/synthetic-telemetry/synthetic-session-fp2.csv
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    checksum: pending
+
+  - id: workflow-runs-v1
+    path: datasets/workflow-runs/workflow-runs-v1.jsonl
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    checksum: pending
+
+  - id: rag-benchmark-v1
+    path: datasets/rag-benchmarks/rag-benchmark-v1.jsonl
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    checksum: pending
+
+  - id: copilot-prompts-v1
+    path: datasets/copilot-prompts/copilot-prompts-v1.jsonl
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    checksum: pending
+
+  - id: what-if-scenarios-v1
+    path: datasets/simulation-scenarios/what-if-scenarios-v1.jsonl
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    checksum: pending
+
+experiments:
+  - id: E01-kdd-governance-traceability
+    path: experiments/E01-kdd-governance-traceability
+    source_repository: 08-experimentation-lab
+    hypothesis: H1
+    status: draft
+
+  - id: E02-sdd-vs-free-generation
+    path: experiments/E02-sdd-vs-free-generation
+    source_repository: 08-experimentation-lab
+    hypothesis: H2
+    status: draft
+
+  - id: E03-mcp-vs-direct-tools
+    path: experiments/E03-mcp-vs-direct-tools
+    source_repository: 08-experimentation-lab
+    hypothesis: H3
+    status: draft
+
+  - id: E04-skills-vs-free-prompts
+    path: experiments/E04-skills-vs-free-prompts
+    source_repository: 08-experimentation-lab
+    hypothesis: H4
+    status: draft
+
+  - id: E05-rag-cag-vs-no-rag
+    path: experiments/E05-rag-cag-vs-no-rag
+    source_repository: 08-experimentation-lab
+    hypothesis: H5
+    status: draft
+
+  - id: E06-copilot-evidence-quality
+    path: experiments/E06-copilot-evidence-quality
+    source_repository: 08-experimentation-lab
+    hypothesis: H6
+    status: draft
+
+  - id: E07-digital-twin-validation
+    path: experiments/E07-digital-twin-validation
+    source_repository: 08-experimentation-lab
+    hypothesis: H7
+    status: draft
+
+  - id: E08-race-command-center-usability
+    path: experiments/E08-race-command-center-usability
+    source_repository: 08-experimentation-lab
+    hypothesis: H8
+    status: draft
+
+  - id: E09-end-to-end-race-engineering-loop
+    path: experiments/E09-end-to-end-race-engineering-loop
+    source_repository: 08-experimentation-lab
+    hypothesis: H1-H8
+    status: draft
+
+outputs:
+  paper_pdf: build/main.pdf
+  reproducibility_report: reproducibility/reproducibility-report.md
+  review_package: dist/review-package.zip
+  checksums: reproducibility/checksums.sha256

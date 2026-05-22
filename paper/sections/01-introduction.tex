@@ -1,22 +1,45 @@
 \section{Introduction}
+\label{sec:introduction}
 
-Agent-oriented software development has moved from isolated assistant usage to
-coordinated workflows where multiple agents can plan, implement, review, and
-validate software artifacts. This paper studies that transition through an
-agentic factory architecture designed to connect development activity with a
-reproducible scientific evaluation.
+Elite motorsport race engineering involves continuous, time-constrained decision
+making under uncertainty. During a single race session an engineering team must
+analyse hundreds of telemetry channels, correlate them with environmental
+conditions, and produce actionable setup recommendations within minutes.
+Traditional toolchains --- spreadsheets, bespoke dashboards, and human expertise
+--- do not scale to the volume and velocity of modern telemetry.
 
-The goal of this repository is to make the paper auditable: each claim should be
-traceable to a protocol, metric definition, experiment output, figure, table, or
-appendix.
+Large language models and agentic frameworks have recently demonstrated the ability
+to process heterogeneous data streams, retrieve relevant context, and produce
+coherent, multi-step plans. However, their adoption in high-stakes engineering
+domains is limited by three open problems:
 
-\subsection{Contributions}
+\begin{enumerate}
+  \item \textbf{Uncontrolled generation.} LLM outputs lack methodology enforcement.
+    Without governance, agents produce inconsistent or unverifiable artefacts.
+  \item \textbf{Tool access security.} Agentic systems that call external tools
+    introduce new attack surfaces and audit challenges.
+  \item \textbf{Reproducibility.} It is difficult to package an LLM-augmented
+    workflow so that third parties can verify or extend its results.
+\end{enumerate}
 
-The expected contributions are:
+This paper presents a KDD-governed agentic architecture that addresses these
+challenges in the race engineering domain. The system is structured as fourteen
+specialised repositories, each with a defined responsibility, governed by a
+shared methodology enforced through structured document definitions, skill
+registries, and an observability platform.
+
+Our main contributions are:
 
 \begin{itemize}
-  \item a reference architecture for an agentic software factory;
-  \item an implementation model aligned with reproducible experiments;
-  \item an experimental protocol for evaluating agentic workflows;
-  \item a public artifact structure connecting code, results, and manuscript.
+  \item A reference architecture for KDD-governed multi-agent systems in
+    high-stakes operational domains (\S\ref{sec:architecture}).
+  \item A governance model that enforces methodology compliance at generation
+    time (\S\ref{sec:kdd-governance}).
+  \item A race AI copilot that translates raw telemetry into evidence-grounded
+    decision support (\S\ref{sec:copilot}).
+  \item A digital twin validation layer that blocks unsafe recommendations
+    (\S\ref{sec:digital-twin}).
+  \item An experimental evaluation across nine controlled studies with synthetic
+    datasets (\S\ref{sec:methodology}).
+  \item A fully packaged reproducibility kit enabling independent verification.
 \end{itemize}

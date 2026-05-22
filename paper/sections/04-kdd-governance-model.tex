@@ -1,0 +1,38 @@
+\section{KDD Governance Model}
+\label{sec:kdd-governance}
+
+The \kdd~governance model defines the rules by which agents and human contributors
+create, modify, and consume artefacts across the repository ecosystem.
+
+\subsection{Core Principles}
+
+\begin{enumerate}
+  \item \textbf{Knowledge first.} Every implementation decision must be grounded
+    in a documented knowledge artefact: an \adr, a metric definition, a workflow
+    specification, or a dataset card.
+  \item \textbf{Traceability.} Every output artefact must carry metadata linking
+    it to the decision, dataset, and workflow that produced it.
+  \item \textbf{Reproducibility by default.} No result may be included in the
+    paper without a corresponding generation script and dataset.
+  \item \textbf{Separation of concerns.} Each repository has a single declared
+    responsibility; cross-cutting concerns are mediated by interfaces.
+\end{enumerate}
+
+\subsection{Structured Document Definitions}
+
+The \sdd~mechanism enforces document structure at generation time. When an agent
+produces a new artefact, the \kdd~governance layer validates the artefact against
+the registered schema for its type before committing it.
+
+\subsection{Governance Metrics}
+
+We define four primary governance metrics:
+
+\begin{itemize}
+  \item \metric{Traceability Score}: fraction of artefacts with complete metadata.
+  \item \metric{SDD Compliance Rate}: fraction of structured documents passing
+    schema validation.
+  \item \metric{Audit Coverage}: fraction of tool calls recorded in the audit log.
+  \item \metric{Evidence Density}: mean number of evidence citations per
+    recommendation.
+\end{itemize}

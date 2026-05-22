@@ -1,0 +1,38 @@
+\section{Digital Twin Simulation}
+\label{sec:digital-twin}
+
+The digital twin provides a physics-informed simulation layer that validates
+copilot recommendations before they are presented to the engineering team.
+
+\subsection{Model Structure}
+
+The digital twin is composed of three sub-models:
+
+\begin{description}
+  \item[Tyre degradation model] predicts surface and carcass temperature
+    evolution as a function of load, speed, and ambient conditions.
+  \item[Suspension kinematics model] maps setup changes (ride height, spring
+    rate, damper settings) to predicted handling characteristics.
+  \item[Lap time delta model] aggregates tyre and suspension effects into a
+    predicted lap time change for each proposed setup modification.
+\end{description}
+
+\subsection{Validation Protocol}
+
+Before a recommendation is released to the \rcc, the digital twin executes a
+validation run:
+
+\begin{enumerate}
+  \item Apply the proposed setup change to the current bike state.
+  \item Simulate the next five laps under projected conditions.
+  \item If predicted lap time delta is negative (improvement): pass.
+  \item If predicted delta exceeds a safety threshold or degrades tyre life
+    below the minimum margin: block and return an alternative.
+\end{enumerate}
+
+\subsection{Integration with Copilot}
+
+The copilot calls the digital twin via the \mcp~gateway. The twin returns a
+structured response with the predicted delta, confidence interval, and a
+pass/fail decision. This response is included in the copilot recommendation
+as a mandatory validation citation.

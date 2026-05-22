@@ -1,0 +1,32 @@
+experiment_id: E01-kdd-governance-traceability
+title: KDD Governance Traceability
+hypothesis: H1
+description: >
+  Measures whether KDD governance enforcement increases the traceability score
+  of generated artefacts compared to ungoverned baseline generation.
+
+conditions:
+  baseline:
+    description: Artefact generation without KDD governance enforcement
+    governance_enabled: false
+  variant:
+    description: Artefact generation with full KDD governance enforcement
+    governance_enabled: true
+
+parameters:
+  runs_per_condition: 10
+  seed_base: 42
+  artefact_count_per_run: 50
+  dataset: synthetic-telemetry-v1
+
+metrics:
+  primary: traceability_score
+  secondary:
+    - metadata_completeness
+    - schema_compliance
+
+statistical_test: wilcoxon_signed_rank
+alpha: 0.05
+
+source_repository: 08-experimentation-lab
+status: draft

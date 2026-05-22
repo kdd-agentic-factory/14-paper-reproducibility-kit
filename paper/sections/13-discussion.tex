@@ -1,0 +1,35 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Governance as Infrastructure}
+
+The central finding is that \kdd~governance is most effective when it is
+implemented as infrastructure rather than convention. Enforcing schema
+validation at generation time (\sdd), routing all tool calls through an
+audited gateway (\mcp), and requiring evidence citations in every recommendation
+produces measurable improvements in traceability, audit coverage, and output
+groundedness with negligible overhead in normal operation.
+
+\subsection{The Value of the Digital Twin}
+
+The $23\%$ block rate observed in E07 indicates that a non-trivial fraction of
+raw copilot recommendations would have been detrimental if applied without
+validation. The twin's ability to provide safer alternatives in $91\%$ of blocked
+cases suggests that the system degrades gracefully rather than failing silently.
+
+\subsection{Skill Registries and Consistency}
+
+Experiment E04 confirms that registering validated agent capabilities as reusable
+skills reduces output variance across runs. This mirrors findings from software
+component reuse research and suggests that skill registries are a practical
+mechanism for managing LLM output consistency in production agentic systems.
+
+\subsection{Limitations and Future Work}
+
+The current architecture relies on synchronous telemetry processing. Real-time
+deployment at MotoGP bandwidth ($>$500\,Hz per channel) would require an
+asynchronous streaming pipeline and sub-200\,ms recommendation latency. Future
+work will integrate a streaming layer and benchmark end-to-end latency under
+realistic load. Additionally, the digital twin models are currently calibrated
+on synthetic data; validation against real (anonymised) session data is a
+priority for the next research phase.

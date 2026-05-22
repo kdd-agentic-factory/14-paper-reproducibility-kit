@@ -1,0 +1,81 @@
+experiments:
+  - id: E01-kdd-governance-traceability
+    title: KDD Governance Traceability
+    hypothesis: H1
+    source_repository: 08-experimentation-lab
+    results_path: experiments/E01-kdd-governance-traceability/results.csv
+    table_path: experiments/E01-kdd-governance-traceability/table.tex
+    paper_section: paper/sections/10-results.tex
+    status: draft
+
+  - id: E02-sdd-vs-free-generation
+    title: SDD versus Free Generation
+    hypothesis: H2
+    source_repository: 08-experimentation-lab
+    results_path: experiments/E02-sdd-vs-free-generation/results.csv
+    table_path: experiments/E02-sdd-vs-free-generation/table.tex
+    paper_section: paper/sections/10-results.tex
+    status: draft
+
+  - id: E03-mcp-vs-direct-tools
+    title: MCP versus Direct Tool Access
+    hypothesis: H3
+    source_repository: 08-experimentation-lab
+    results_path: experiments/E03-mcp-vs-direct-tools/results.csv
+    table_path: experiments/E03-mcp-vs-direct-tools/table.tex
+    paper_section: paper/sections/10-results.tex
+    status: draft
+
+  - id: E04-skills-vs-free-prompts
+    title: Skills versus Free Prompts
+    hypothesis: H4
+    source_repository: 08-experimentation-lab
+    results_path: experiments/E04-skills-vs-free-prompts/results.csv
+    table_path: experiments/E04-skills-vs-free-prompts/table.tex
+    paper_section: paper/sections/10-results.tex
+    status: draft
+
+  - id: E05-rag-cag-vs-no-rag
+    title: RAG/CAG versus No Retrieval
+    hypothesis: H5
+    source_repository: 08-experimentation-lab
+    results_path: experiments/E05-rag-cag-vs-no-rag/results.csv
+    table_path: experiments/E05-rag-cag-vs-no-rag/table.tex
+    paper_section: paper/sections/10-results.tex
+    status: draft
+
+  - id: E06-copilot-evidence-quality
+    title: Copilot Evidence Quality
+    hypothesis: H6
+    source_repository: 08-experimentation-lab
+    results_path: experiments/E06-copilot-evidence-quality/results.csv
+    table_path: experiments/E06-copilot-evidence-quality/table.tex
+    paper_section: paper/sections/10-results.tex
+    status: draft
+
+  - id: E07-digital-twin-validation
+    title: Digital Twin Validation
+    hypothesis: H7
+    source_repository: 08-experimentation-lab
+    results_path: experiments/E07-digital-twin-validation/results.csv
+    table_path: experiments/E07-digital-twin-validation/table.tex
+    paper_section: paper/sections/10-results.tex
+    status: draft
+
+  - id: E08-race-command-center-usability
+    title: Race Command Center Usability
+    hypothesis: H8
+    source_repository: 08-experimentation-lab
+    results_path: experiments/E08-race-command-center-usability/results.csv
+    table_path: experiments/E08-race-command-center-usability/table.tex
+    paper_section: paper/sections/10-results.tex
+    status: draft
+
+  - id: E09-end-to-end-race-engineering-loop
+    title: End-to-End Race Engineering Loop
+    hypothesis: H1-H8
+    source_repository: 08-experimentation-lab
+    results_path: experiments/E09-end-to-end-race-engineering-loop/results.csv
+    table_path: experiments/E09-end-to-end-race-engineering-loop/table.tex
+    paper_section: paper/sections/10-results.tex
+    status: draft

@@ -1,0 +1,35 @@
+\section{Security and Governance}
+\label{sec:security-governance}
+
+Security and governance controls are implemented across the fourteen-repository
+ecosystem, coordinated by \repo{13-security-governance-compliance}.
+
+\subsection{Tool Access Controls}
+
+All agent-to-tool communication passes through the \mcp~gateway, which enforces:
+
+\begin{itemize}
+  \item capability-based access control (agents may only call declared tools),
+  \item mandatory audit logging for every tool invocation,
+  \item rate limiting and circuit-breaker patterns,
+  \item secret injection from a vault (no secrets in agent prompts).
+\end{itemize}
+
+\subsection{Prompt Injection Mitigations}
+
+The system applies structured output validation and content filtering at the
+gateway layer to detect and reject prompt injection attempts embedded in
+tool responses.
+
+\subsection{Data Classification}
+
+All datasets in this repository are classified as public-synthetic. No real
+rider, team, or circuit telemetry is included. Dataset cards document the
+classification, generation method, and known limitations.
+
+\subsection{Compliance Controls}
+
+The security control catalog (\texttt{artifacts/security/control-catalog.yaml})
+maps each control to its implementing repository, verification evidence, and
+compliance standard. Controls are validated in CI via
+\texttt{.github/workflows/validate-reproducibility.yml}.

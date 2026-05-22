@@ -1,54 +1,103 @@
 # 14-paper-reproducibility-kit
 
-Repositorio final del paper y punto de enlace entre el desarrollo del sistema,
-los experimentos y el articulo cientifico.
+Reproducibility kit for the KDD-governed agentic race engineering platform paper.
 
-## Objetivo
+This repository contains:
 
-Este kit organiza los artefactos necesarios para que el paper sea reproducible:
+- the LaTeX paper manuscript,
+- experimental results and configurations,
+- synthetic datasets,
+- analysis notebooks,
+- reproducibility scripts,
+- tables and figures (generated),
+- architecture diagrams,
+- workflow definitions,
+- security and compliance evidence,
+- Docker/Kubernetes deployment summaries,
+- CI/CD release evidence,
+- reviewer instructions.
 
-- manuscrito LaTeX modularizado en `paper/`;
-- protocolo experimental y definicion de metricas en `reproducibility/`;
-- notebooks de analisis en `notebooks/`;
-- resultados exportados en `results/`;
-- material suplementario en `appendices/`.
+## Quick Start
 
-## Estructura
+```bash
+make setup
+make build-paper
+make reproduce-all
+```
+
+## Main Outputs
+
+- compiled paper PDF (`build/main.pdf`),
+- experiment tables (`paper/tables/`),
+- generated figures (`paper/figures/`),
+- reproducibility report (`reproducibility/reproducibility-report.md`),
+- review package (`dist/review-package.zip`),
+- artifact index (`artifacts/artifact-index.yaml`).
+
+## Structure
 
 ```text
 14-paper-reproducibility-kit/
-├── README.md
-├── AGENTS.md
-├── paper/
-│   ├── main.tex
-│   ├── sections/
-│   ├── figures/
-│   ├── tables/
-│   └── references.bib
-├── reproducibility/
-├── notebooks/
-├── results/
-└── appendices/
+├── paper/                  LaTeX manuscript
+├── artifacts/              generated artefacts with provenance
+├── experiments/            experiment results and evidence
+├── datasets/               synthetic and anonymised datasets
+├── notebooks/              analysis notebooks
+├── scripts/                generation and validation scripts
+├── src/paper_kit/          Python library for kit utilities
+├── results/                raw and processed results
+├── reproducibility/        protocol and checksums
+├── review-package/         reviewer-ready package
+├── docs/                   extended documentation
+└── tests/                  structure and integrity tests
 ```
 
-## Uso recomendado
-
-1. Documentar cada experimento antes de ejecutarlo en
-   `reproducibility/experiment-protocol.md`.
-2. Guardar notebooks exploratorios o de analisis final en `notebooks/`.
-3. Exportar metricas, tablas y figuras generadas a `results/`, `paper/tables/`
-   y `paper/figures/`.
-4. Actualizar las secciones del manuscrito en `paper/sections/`.
-5. Mantener la checklist de artefactos al dia en
-   `reproducibility/artifact-checklist.md`.
-
-## Compilacion del paper
-
-Desde la carpeta `paper/`, compilar con una distribucion LaTeX compatible:
+## Building the Paper
 
 ```bash
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
+make build-paper
 ```
+
+Requires a TeX Live installation with `latexmk` or the Docker environment.
+
+## Reproducing Results
+
+```bash
+make generate-data
+make generate-tables
+make generate-figures
+make validate
+```
+
+## Running Notebooks
+
+Open notebooks in Jupyter after `make setup`:
+
+```bash
+jupyter lab notebooks/
+```
+
+## Executing Tests
+
+```bash
+make test
+```
+
+## Creating the Review Package
+
+```bash
+make package-review
+```
+
+## Docker Reproduction
+
+```bash
+docker compose -f docker-compose.repro.yml up --build
+```
+
+This command runs `make reproduce-all` inside a fully specified environment
+including Python 3.11 and TeX Live.
+
+## Citation
+
+See [CITATION.cff](CITATION.cff) for citation metadata.

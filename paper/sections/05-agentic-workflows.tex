@@ -1,0 +1,41 @@
+\section{Agentic Workflows}
+\label{sec:agentic-workflows}
+
+Agentic workflows are declarative specifications of multi-step processes that
+agents execute autonomously within the governance constraints of the \kdd~model.
+
+\subsection{Workflow Structure}
+
+Each workflow definition contains:
+
+\begin{itemize}
+  \item \textbf{trigger}: the event or command that initiates the workflow,
+  \item \textbf{steps}: an ordered sequence of agent actions,
+  \item \textbf{inputs}: declared parameters and their sources,
+  \item \textbf{outputs}: expected artefacts with metadata requirements,
+  \item \textbf{governance\_checks}: validation rules applied before committing
+    each output.
+\end{itemize}
+
+\subsection{Core Workflows}
+
+The system defines five primary workflows:
+
+\begin{description}
+  \item[\workflow{pre-grand-prix}] Aggregates telemetry from previous sessions,
+    retrieves historical setup patterns, and produces a race strategy brief.
+  \item[\workflow{run-setup-what-if}] Simulates alternative setup configurations
+    using the digital twin and ranks them by predicted lap time delta.
+  \item[\workflow{generate-paper-section}] Produces a draft paper section from
+    experiment results, metadata, and bibliography entries.
+  \item[\workflow{create-new-feature}] Scaffolds a new feature across the
+    relevant repositories following governance constraints.
+  \item[\workflow{copilot-evidence-report}] Assembles a structured evidence
+    report from active telemetry and knowledge base queries.
+\end{description}
+
+\subsection{Skill Reuse}
+
+Workflows invoke reusable capabilities registered in \repo{04-skills-autoskills-registry}.
+A skill encapsulates a validated, versioned agent capability. Invoking a registered
+skill rather than a free prompt increases output consistency and audit coverage.

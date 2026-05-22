@@ -1,4 +1,4 @@
-\documentclass[conference]{IEEEtran}
+\documentclass[11pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -7,45 +7,57 @@
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{url}
+\usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{listings}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
 
-\title{Agentic Factory: A Reproducible Architecture for Agent-Oriented Software Engineering}
+\input{style/macros}
+\input{style/notation}
 
-\author{
-\IEEEauthorblockN{Author Name}
-\IEEEauthorblockA{
-Institution\\
-Email: author@example.com
-}
-}
+\title{A KDD-Governed Agentic Architecture for Race Engineering:\\
+From Telemetry to Evidence-Grounded Decision Support}
+
+\author{Ruben Juarez Cadiz\\
+Universidad Alfonso X el Sabio}
+
+\date{}
 
 \begin{document}
 
 \maketitle
 
-\begin{abstract}
-This paper presents the architecture, methodology, implementation, and
-experimental protocol for an agentic factory approach. The repository provides a
-reproducibility kit connecting the manuscript with execution protocols,
-definitions of metrics, experimental outputs, and supplementary artifacts.
-\end{abstract}
+\input{abstract}
 
-\begin{IEEEkeywords}
-agentic software engineering, reproducibility, software architecture,
-experimental protocol, autonomous agents
-\end{IEEEkeywords}
+\tableofcontents
+\newpage
 
 \input{sections/01-introduction}
 \input{sections/02-related-work}
 \input{sections/03-architecture}
-\input{sections/04-methodology}
-\input{sections/05-implementation}
-\input{sections/06-experiments}
-\input{sections/07-results}
-\input{sections/08-discussion}
-\input{sections/09-conclusions}
+\input{sections/04-kdd-governance-model}
+\input{sections/05-agentic-workflows}
+\input{sections/06-race-command-center}
+\input{sections/07-race-ai-copilot}
+\input{sections/08-digital-twin-simulation}
+\input{sections/09-experimental-methodology}
+\input{sections/10-results}
+\input{sections/11-security-governance}
+\input{sections/12-threats-to-validity}
+\input{sections/13-discussion}
+\input{sections/14-conclusion}
 
-\bibliographystyle{IEEEtran}
-\bibliography{references}
+\bibliographystyle{elsarticle-num}
+\bibliography{bibliography/references,bibliography/software}
+
+\appendix
+
+\input{appendices/appendix-a-repository-organization}
+\input{appendices/appendix-b-workflow-definitions}
+\input{appendices/appendix-c-metrics-catalog}
+\input{appendices/appendix-d-security-controls}
+\input{appendices/appendix-e-reproducibility-protocol}
+\input{appendices/appendix-f-experiment-configurations}
 
 \end{document}

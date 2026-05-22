@@ -1,19 +1,51 @@
-\section{Architecture}
+\section{System Architecture}
+\label{sec:architecture}
 
-The proposed architecture separates responsibilities across planning,
-implementation, verification, documentation, and reproducibility layers.
+The system is organised as fourteen specialised repositories forming a layered
+architecture (Figure~\ref{fig:architecture-overview}). Each repository has a
+single defined responsibility and communicates with adjacent layers through
+declared interfaces.
 
-\subsection{Core Components}
+\subsection{Layered Organisation}
 
-Describe the orchestration layer, agent roles, shared workspace, task state,
-tooling interfaces, and artifact registry.
+\begin{description}
+  \item[\repo{00-kdd-governance}] Defines the methodology, standards, and
+    governance artefacts consumed by all other repositories.
+  \item[\repo{01-agent-orchestrator}] Houses the primary agentic engine
+    responsible for task decomposition, agent routing, and session management.
+  \item[\repo{02-mcp-gateway}] Provides secure, audited access to external
+    tools via the Model Context Protocol.
+  \item[\repo{03-rag-cag-knowledge-layer}] Manages domain knowledge retrieval
+    and context augmentation.
+  \item[\repo{04-skills-autoskills-registry}] Stores reusable agent capabilities
+    and auto-skill generation pipelines.
+  \item[\repo{05-documentation-agent}] Produces traceable, structured
+    documentation from agent activity.
+  \item[\repo{06-kdd-data-pipelines}] Transforms raw telemetry into features,
+    patterns, and evidence packets.
+  \item[\repo{07-agentic-workflows}] Declares and executes multi-step
+    declarative workflows.
+  \item[\repo{08-experimentation-lab}] Designs, executes, and archives
+    controlled experiments.
+  \item[\repo{09-observability-platform}] Provides metrics, distributed tracing,
+    and alerting.
+  \item[\repo{10-infra-docker}] Delivers reproducible local development
+    environments.
+  \item[\repo{11-infra-kubernetes}] Manages cloud-native deployment manifests.
+  \item[\repo{12-ci-cd-release-engineering}] Automates build, test, and release
+    pipelines.
+  \item[\repo{13-security-governance-compliance}] Enforces security controls,
+    risk management, and compliance policies.
+  \item[\repo{14-paper-reproducibility-kit}] Packages the scientific paper and
+    all reproducibility artefacts (this repository).
+\end{description}
 
-\subsection{Data and Artifact Flow}
+\subsection{Data Flow}
 
-Explain how development traces, experiment outputs, metrics, figures, and tables
-move from execution to the final manuscript.
-
-\subsection{Reproducibility Boundary}
-
-Define which parts of the system are expected to be reproduced exactly and which
-parts are reported as environment-dependent.
+Telemetry from on-bike sensors enters through \repo{06-kdd-data-pipelines},
+where it is transformed into structured evidence packets. Packets are indexed
+in \repo{03-rag-cag-knowledge-layer} for retrieval by the race AI copilot.
+The copilot, orchestrated by \repo{01-agent-orchestrator}, queries the knowledge
+layer, calls tools via \repo{02-mcp-gateway}, and produces recommendations that
+pass through the digital twin validation layer before reaching the Race Command
+Center dashboard.

@@ -1,0 +1,134 @@
+artifacts:
+  - id: FIG-ARCH-001
+    type: figure
+    title: System architecture overview
+    path: paper/figures/architecture-overview.pdf
+    source_repository: 05-documentation-agent
+    generation_script: scripts/generate-figures.py
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: FIG-KDD-001
+    type: figure
+    title: KDD-governed agentic loop
+    path: paper/figures/kdd-agentic-loop.pdf
+    source_repository: 00-kdd-governance
+    generation_script: scripts/generate-figures.py
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: FIG-REPO-001
+    type: figure
+    title: Repository map
+    path: paper/figures/repository-map.pdf
+    source_repository: 14-paper-reproducibility-kit
+    generation_script: scripts/generate-figures.py
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: FIG-RCC-001
+    type: figure
+    title: Race Command Center dashboard
+    path: paper/figures/race-command-dashboard.pdf
+    source_repository: 05-documentation-agent
+    generation_script: scripts/generate-figures.py
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: FIG-EXP-001
+    type: figure
+    title: Experimental design overview
+    path: paper/figures/experimental-design.pdf
+    source_repository: 08-experimentation-lab
+    generation_script: scripts/generate-figures.py
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: FIG-RES-001
+    type: figure
+    title: Results summary
+    path: paper/figures/results-summary.pdf
+    source_repository: 08-experimentation-lab
+    generation_script: scripts/generate-figures.py
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: TAB-EXP-001
+    type: table
+    title: Experiment summary
+    path: paper/tables/experiment-summary.tex
+    source_repository: 08-experimentation-lab
+    generation_script: scripts/generate-tables.py
+    experiment_id: E01-E09
+    created_at: 2026-05-22
+    checksum: pending
+    status: generated
+
+  - id: TAB-REPO-001
+    type: table
+    title: Repository catalog
+    path: paper/tables/repository-catalog.tex
+    source_repository: 14-paper-reproducibility-kit
+    generation_script: scripts/generate-tables.py
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: TAB-SEC-001
+    type: table
+    title: Security controls
+    path: paper/tables/security-controls.tex
+    source_repository: 13-security-governance-compliance
+    generation_script: scripts/generate-tables.py
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: TAB-METRIC-001
+    type: table
+    title: Metrics catalog
+    path: paper/tables/metrics-catalog.tex
+    source_repository: 09-observability-platform
+    generation_script: scripts/generate-tables.py
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: DATA-SYN-001
+    type: dataset
+    title: Synthetic telemetry session FP1
+    path: datasets/synthetic-telemetry/synthetic-session-fp1.csv
+    source_repository: 06-kdd-data-pipelines
+    generation_script: scripts/generate-synthetic-telemetry.py
+    dataset_id: synthetic-telemetry-v1
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: DATA-SYN-002
+    type: dataset
+    title: Synthetic telemetry session FP2
+    path: datasets/synthetic-telemetry/synthetic-session-fp2.csv
+    source_repository: 06-kdd-data-pipelines
+    generation_script: scripts/generate-synthetic-telemetry.py
+    dataset_id: synthetic-telemetry-v1
+    created_at: pending
+    checksum: pending
+    status: pending
+
+  - id: DATA-WF-001
+    type: dataset
+    title: Workflow runs log
+    path: datasets/workflow-runs/workflow-runs-v1.jsonl
+    source_repository: 07-agentic-workflows
+    generation_script: scripts/generate-synthetic-telemetry.py
+    dataset_id: workflow-runs-v1
+    created_at: pending
+    checksum: pending
+    status: pending

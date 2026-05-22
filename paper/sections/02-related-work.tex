@@ -1,15 +1,39 @@
 \section{Related Work}
+\label{sec:related-work}
 
-This section positions the work with respect to agentic software engineering,
-multi-agent coordination, reproducible research, and empirical evaluation of
-software development tools.
+\subsection{Agentic AI Frameworks}
 
-\subsection{Agentic Software Engineering}
+Recent frameworks such as LangChain, AutoGen, and CrewAI enable the construction
+of multi-agent pipelines where LLMs invoke tools and delegate subtasks to
+specialised agents~\cite{langchain2023,autogen2023}. These frameworks provide
+routing, memory, and tool-calling primitives but do not enforce methodology
+compliance or provide domain-specific governance.
 
-Summarize prior work on LLM-based coding assistants, autonomous agents,
-planning systems, code review agents, and tool-using models.
+\subsection{Knowledge-Driven Development}
 
-\subsection{Reproducible Software Engineering Research}
+Knowledge-Driven Development (\kdd) is a software engineering methodology that
+treats knowledge artefacts --- structured documents, decisions, constraints, and
+evidence --- as first-class deliverables~\cite{kdd2024}. Unlike test-driven or
+behaviour-driven approaches, \kdd~governs the intent and rationale behind
+implementation decisions.
 
-Discuss artifact evaluation, experiment packaging, containerized reproduction,
-and reporting standards for empirical software engineering.
+\subsection{Race Engineering Decision Support}
+
+Existing race engineering decision support systems rely on expert systems and
+simulation tools~\cite{race-eng-2021}. LLM integration in motorsport has been
+explored in preliminary industry pilots but no peer-reviewed architecture has
+been published to date.
+
+\subsection{Model Context Protocol}
+
+The Model Context Protocol (\mcp) standardises the interface between LLM agents
+and external tools, providing security boundaries, audit logging, and capability
+negotiation~\cite{mcp2024}. We use \mcp~as the tool-access layer across all
+agent interactions.
+
+\subsection{RAG and CAG}
+
+Retrieval-Augmented Generation (\rag) and Cache-Augmented Generation (\cag)
+extend LLM knowledge with retrieved context~\cite{rag2020,cag2024}. We apply
+both approaches to inject domain-specific race engineering knowledge into
+agent reasoning chains.

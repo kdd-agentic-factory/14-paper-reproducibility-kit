@@ -1,0 +1,29 @@
+\section{Workflow Definitions}
+\label{app:workflow-definitions}
+
+Full workflow YAML definitions are stored in
+\texttt{artifacts/workflows/}. This appendix summarises the five primary
+workflows used in the experimental evaluation.
+
+\begin{description}
+  \item[\texttt{pre-grand-prix}] Aggregates telemetry from previous sessions,
+    retrieves historical setup patterns, and produces a race strategy brief.
+    Steps: retrieve-telemetry $\to$ extract-features $\to$ query-knowledge $\to$
+    generate-brief $\to$ validate-twin $\to$ publish-rcc.
+
+  \item[\texttt{run-setup-what-if}] Simulates alternative setup configurations.
+    Steps: parse-setup-delta $\to$ run-twin-simulation $\to$ rank-alternatives
+    $\to$ generate-report.
+
+  \item[\texttt{generate-paper-section}] Produces a draft paper section.
+    Steps: load-experiment-results $\to$ load-bibliography $\to$
+    generate-latex $\to$ validate-sdd $\to$ commit-section.
+
+  \item[\texttt{create-new-feature}] Scaffolds a new feature across repositories.
+    Steps: parse-adr $\to$ scaffold-repositories $\to$ generate-tests $\to$
+    update-documentation.
+
+  \item[\texttt{copilot-evidence-report}] Assembles a structured evidence report.
+    Steps: ingest-telemetry $\to$ extract-anomalies $\to$ retrieve-context $\to$
+    generate-recommendations $\to$ validate-twin $\to$ publish-evidence.
+\end{description}

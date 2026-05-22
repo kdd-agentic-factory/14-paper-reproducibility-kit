@@ -1,0 +1,49 @@
+controls:
+  - id: SEC-001
+    title: Capability-based tool access via MCP
+    description: Agents may only call tools declared in their capability manifest
+    implementing_repository: 02-mcp-gateway
+    verification: CI audit log check
+    status: implemented
+
+  - id: SEC-002
+    title: Mandatory audit logging per tool call
+    description: Every tool invocation is logged with agent ID, timestamp, inputs, outputs
+    implementing_repository: 02-mcp-gateway
+    verification: Audit coverage metric > 0.99
+    status: implemented
+
+  - id: SEC-003
+    title: Secret injection from vault
+    description: No secrets in agent prompts or repository files; injected at runtime
+    implementing_repository: 02-mcp-gateway
+    verification: Secret scanning in CI
+    status: implemented
+
+  - id: SEC-004
+    title: Prompt injection filtering
+    description: Tool responses are sanitised before inclusion in agent context
+    implementing_repository: 02-mcp-gateway
+    verification: Injection test suite
+    status: implemented
+
+  - id: SEC-005
+    title: Dataset classification enforcement
+    description: All datasets must have a dataset card with classification field
+    implementing_repository: 14-paper-reproducibility-kit
+    verification: test_no_sensitive_data.py
+    status: implemented
+
+  - id: SEC-006
+    title: No credentials in repository
+    description: Secret scanning runs on every push
+    implementing_repository: all
+    verification: .github/workflows/validate-reproducibility.yml
+    status: enforced
+
+  - id: SEC-007
+    title: SBOM generation per release
+    description: Software Bill of Materials generated for every tagged release
+    implementing_repository: 12-ci-cd-release-engineering
+    verification: Release artifact includes sbom.json
+    status: implemented

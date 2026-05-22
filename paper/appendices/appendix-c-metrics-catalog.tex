@@ -1,0 +1,23 @@
+\section{Metrics Catalog}
+\label{app:metrics-catalog}
+
+\begin{table}[ht]
+\centering
+\caption{Full metrics catalog with definitions, measurement method, and target values.}
+\label{tab:metrics-catalog}
+\begin{tabular}{lp{5cm}lc}
+\toprule
+Metric & Definition & Method & Target \\
+\midrule
+Traceability Score & Fraction of artefacts with complete metadata & Automated & $> 0.90$ \\
+SDD Compliance Rate & Fraction of docs passing schema validation & CI gate & $> 0.95$ \\
+Audit Coverage & Fraction of tool calls in audit log & MCP telemetry & $> 0.99$ \\
+Evidence Density & Mean citations per recommendation & Log analysis & $> 2.0$ \\
+Groundedness & Fraction of claims citing retrieved evidence & Annotation & $> 0.75$ \\
+Citation Coverage & Fraction of recommendations with $\geq 1$ citation & Log & $> 0.80$ \\
+Block Rate & Fraction of recs blocked by digital twin & Twin log & measured \\
+Alternative Rate & Fraction of blocks with safer alternative & Twin log & $> 0.85$ \\
+Tool Precision & Fraction of tool calls producing correct output & Test suite & $> 0.85$ \\
+\bottomrule
+\end{tabular}
+\end{table}

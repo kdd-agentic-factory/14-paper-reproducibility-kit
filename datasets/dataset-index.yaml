@@ -1,0 +1,52 @@
+datasets:
+  - id: synthetic-telemetry-v1
+    title: Synthetic Motorcycle Telemetry
+    path: datasets/synthetic-telemetry/
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    dataset_card: datasets/synthetic-telemetry/dataset-card.md
+    files:
+      - synthetic-session-fp1.csv
+      - synthetic-session-fp2.csv
+    rows_per_file: 5000
+    status: generated
+
+  - id: workflow-runs-v1
+    title: Synthetic Workflow Runs Log
+    path: datasets/workflow-runs/
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    dataset_card: datasets/workflow-runs/dataset-card.md
+    files:
+      - workflow-runs-v1.jsonl
+    status: pending
+
+  - id: rag-benchmark-v1
+    title: RAG Evaluation Benchmark
+    path: datasets/rag-benchmarks/
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    dataset_card: datasets/rag-benchmarks/dataset-card.md
+    files:
+      - rag-benchmark-v1.jsonl
+    status: pending
+
+  - id: copilot-prompts-v1
+    title: Copilot Prompt-Response Pairs
+    path: datasets/copilot-prompts/
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    dataset_card: datasets/copilot-prompts/dataset-card.md
+    files:
+      - copilot-prompts-v1.jsonl
+    status: pending
+
+  - id: what-if-scenarios-v1
+    title: Setup What-If Simulation Scenarios
+    path: datasets/simulation-scenarios/
+    classification: public-synthetic
+    generation_script: scripts/generate-synthetic-telemetry.py
+    dataset_card: datasets/simulation-scenarios/dataset-card.md
+    files:
+      - what-if-scenarios-v1.jsonl
+    status: pending
