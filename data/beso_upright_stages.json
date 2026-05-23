@@ -1,0 +1,76 @@
+{
+  "_metadata": {
+    "case_study": "Formula Student upright — BESO topology optimisation",
+    "paper": "Structural optimization principles for edge AI in motorsport telemetry",
+    "doi": "10.1038/s41598-026-49736-0",
+    "material": "Al 7075-T6",
+    "software": "BESO (Bidirectional Evolutionary Structural Optimisation)",
+    "load_case": "worst-case cornering + braking combined",
+    "objective": "minimise compliance (maximise stiffness) subject to volume constraint",
+    "final_volume_fraction": 0.35
+  },
+  "stages": [
+    {
+      "stage": 0,
+      "label": "initial_design",
+      "description": "Full solid design space before optimisation",
+      "volume_fraction": 1.00,
+      "mass_kg": 2.45,
+      "compliance_Nmm": 12800.0,
+      "max_von_mises_MPa": 487.0,
+      "safety_factor": 1.05,
+      "accepted": false,
+      "notes": "Baseline — all elements active"
+    },
+    {
+      "stage": 1,
+      "label": "beso_30pct_removal",
+      "description": "30 % least-sensitive elements removed by BESO sensitivity criterion",
+      "volume_fraction": 0.70,
+      "mass_kg": 1.72,
+      "compliance_Nmm": 13450.0,
+      "max_von_mises_MPa": 512.0,
+      "safety_factor": 1.00,
+      "accepted": false,
+      "notes": "Material below yield at static case; dynamic margin narrow"
+    },
+    {
+      "stage": 2,
+      "label": "beso_55pct_removal",
+      "description": "55 % removed; load-path lattice emerges",
+      "volume_fraction": 0.45,
+      "mass_kg": 1.10,
+      "compliance_Nmm": 14200.0,
+      "max_von_mises_MPa": 498.0,
+      "safety_factor": 1.02,
+      "accepted": false,
+      "notes": "Stiffness degradation 11 % vs baseline — approaching limit"
+    },
+    {
+      "stage": 3,
+      "label": "beso_65pct_removal_final",
+      "description": "Final optimised topology — 65 % material removed",
+      "volume_fraction": 0.35,
+      "mass_kg": 0.86,
+      "compliance_Nmm": 14890.0,
+      "max_von_mises_MPa": 501.0,
+      "safety_factor": 1.01,
+      "accepted": true,
+      "notes": "Structural FoS >= 1.0; mass 65 % below initial; manufacturable by SLM"
+    }
+  ],
+  "k_h_correspondence": {
+    "description": "K↔H sensitivity correspondence — structural stiffness matrix K maps to PTQ loss Hessian H",
+    "structural_sensitivity": "element strain energy density (removes low-sensitivity elements)",
+    "digital_sensitivity": "Hessian-weighted activation magnitude (GPTQ/AWQ removes low-sensitivity weights)",
+    "analogy": {
+      "K": "stiffness matrix governing compliance",
+      "H": "loss Hessian governing perplexity after quantisation",
+      "element_removal": "binary BESO decision — element in or out",
+      "weight_quantisation": "INT4 bit assignment — low-sensitivity weights get 4-bit encoding"
+    }
+  },
+  "physical_fos_formula": "FoS_struct = sigma_yield / sigma_max_von_mises",
+  "digital_fos_formula": "FoS_dig = PPL_collapse / PPL_quant",
+  "unified_acceptance_criterion": "FoS >= 1.0 in both domains"
+}
