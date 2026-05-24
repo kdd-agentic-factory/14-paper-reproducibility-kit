@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  paper:
+    name: Build paper
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-pandoc@v2
+      - uses: xu-cheng/latex-action@v3
+        continue-on-error: true
+        with:
+          root_file: paper/main.tex
+      - name: Build Markdown fallback
+        if: hashFiles('paper/main.md') != ''
+        run: pandoc paper/main.md -o paper/main.pdf
+      - uses: actions/upload-artifact@v4
+        if: always() && hashFiles('paper/*.pdf') != ''
+        with:
+          name: paper-pdf
+          path: paper/*.pdf
