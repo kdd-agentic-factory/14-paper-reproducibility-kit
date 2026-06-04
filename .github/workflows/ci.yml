@@ -24,3 +24,11 @@ jobs:
         with:
           name: paper-pdf
           path: paper/*.pdf
+
+  docker:
+    uses: kdd-agentic-factory/12-ci-cd-security/.github/workflows/reusable-docker-build.yml@main
+    with:
+      image-name: paper-reproducibility-kit
+      push: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+    secrets:
+      registry-token: ${{ secrets.GITHUB_TOKEN }}
