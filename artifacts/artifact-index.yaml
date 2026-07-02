@@ -52,7 +52,7 @@ artifacts:
   - id: FIG-RES-001
     type: figure
     title: Results summary
-    path: paper/figures/results-summary.pdf
+    path: paper/figures/results-summary-restored.pdf
     source_repository: 08-experimentation-lab
     generation_script: scripts/generate-figures.py
     created_at: pending

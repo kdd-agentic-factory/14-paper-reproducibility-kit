@@ -45,7 +45,7 @@ docker compose -f docker-compose.repro.yml up --build
 | Synthetic telemetry FP2 | `datasets/synthetic-telemetry/synthetic-session-fp2.csv` |
 | Workflow runs log | `datasets/workflow-runs/workflow-runs-v1.jsonl` |
 | Experiment summary table | `paper/tables/experiment-summary.tex` |
-| Results summary figure | `paper/figures/results-summary.pdf` |
+| Results summary figure | `paper/figures/results-summary-restored.pdf` |
 | Checksums | `reproducibility/checksums.sha256` |
 
 ## Verification

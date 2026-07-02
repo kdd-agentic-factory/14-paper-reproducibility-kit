@@ -16,7 +16,7 @@ files should exist:
 
 ## Figures
 
-- `paper/figures/results-summary.pdf`
+- `paper/figures/results-summary-restored.pdf`
 - `paper/figures/experimental-design.pdf`
 
 ## Paper

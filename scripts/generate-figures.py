@@ -26,7 +26,7 @@ def generate_results_summary() -> None:
     ax.grid(axis="y", linestyle="--", alpha=0.4)
     fig.tight_layout()
 
-    out = Path("paper/figures/results-summary.pdf")
+    out = Path("paper/figures/results-summary-restored.pdf")
     out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out)
     plt.close(fig)
